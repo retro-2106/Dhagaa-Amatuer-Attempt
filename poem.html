@@ -1,0 +1,148 @@
+﻿<html>
+<title>
+Poems
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+मुश्किलें जरुर है, मगर ठहरा नही हूं मैं<br>
+मंज़िल से जरा कह दो, अभी पहुंचा नही हूं मैं<br>
+कदमो को बांध न पाएंगी, मुसीबत कि जंजीरें,<br>
+रास्तों से जरा कह दो, अभी भटका नही हूं मैं<br>
+सब्र का बांध टूटेगा, तो फ़ना कर के रख दूंगा,<br>
+दुश्मन से जरा कह दो, अभी गरजा नही हूं मैं<br>
+दिल में छुपा के रखी है, लड़कपन कि चाहतें,<br>
+मोहब्बत से जरा कह दो, अभी बदला नही हूं मैं<br>
+साथ चलता है, दुआओ का काफिला<br>
+किस्मत से जरा कह दो, अभी तनहा नही हूं मैं....<br><br><br>
+<hr/>
+कहाँ पर बोलना है<br>
+और कहाँ पर बोल जाते हैं।<br>
+जहाँ खामोश रहना है<br>
+वहाँ मुँह खोल जाते हैं।<br><br><br>
+<hr/>
+कटा जब शीश सैनिक का<br>
+तो हम खामोश रहते हैं।<br>
+कटा एक सीन पिक्चर का<br>
+तो सारे बोल जाते हैं।<br>
+नयी नस्लों के ये बच्चे...<br>
+नयी नस्लों के ये बच्चे<br>
+जमाने भर की सुनते हैं।<br>
+मगर माँ बाप कुछ बोले<br>
+तो बच्चे बोल जाते हैं।<br><br><br>
+<hr/>
+बहुत ऊँची दुकानों में<br>
+कटाते जेब सब अपनी।<br>
+मगर मज़दूर माँगेगा<br>
+तो सिक्के बोल जाते हैं।<br>
+अगर मखमल करे गलती...<br>
+अगर मखमल करे गलती<br>
+तो कोई कुछ नहीँ कहता।<br>
+फटी चादर की गलती हो<br>
+तो सारे बोल जाते हैं।<br><br><br>
+<hr/>
+हवाओं की तबाही को<br>
+सभी चुपचाप सहते हैं।<br>
+च़रागों से हुई गलती<br>
+तो सारे बोल जाते हैं।<br>
+बनाते फिरते हैं रिश्ते...<br>
+बनाते फिरते हैं रिश्ते<br>
+जमाने भर से अक्सर।<br>
+मगर जब घर में हो जरूरत<br>
+तो रिश्ते भूल जाते हैं।<br><br><br>
+<hr/>
+</div>
+
+</body>
+</html>

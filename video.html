@@ -1,0 +1,141 @@
+﻿<html>
+<title>
+Video
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:1%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+#v1{
+position:absolute;
+top:15%;
+left:10%;
+}
+#v2{
+position:absolute;
+top:15%;
+left:50%;
+}
+#v3{
+position:absolute;
+top:90%;
+left:10%;
+}
+#v4{
+position:absolute;
+top:90%;
+left:50%;
+}
+#v5{
+position:absolute;
+top:165%;
+left:10%;
+}
+#v6{
+position:absolute;
+top:165%;
+left:50%;
+}
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 25px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<img style="position:absolute;top:4%;left:5%;" src="logo.png" >
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="all">
+<iframe id="v1" width="500" height="409" src="https://www.youtube.com/embed/JG19GY9bABY" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="v2" width="500" height="409" src="https://www.youtube.com/embed/h9gs46_MRDg" frameborder="0" allow="accelerometer;
+ autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="v3" width="500" height="409" src="https://www.youtube.com/embed/veD8BMn3FsQ" frameborder="0" allow="accelerometer; 
+autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="v4" width="500" height="409" src="https://www.youtube.com/embed/FEb351PJdEo" frameborder="0" allow="accelerometer; 
+autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="v5" width="500" height="409" src="https://www.youtube.com/embed/0Mk717Moh_g" frameborder="0" allow="accelerometer; 
+autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  id="v6" width="500" height="409" src="https://www.youtube.com/embed/FHFVEuzDasc" frameborder="0" allow="accelerometer; 
+autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</body>

@@ -1,0 +1,127 @@
+﻿<html>
+<title>
+Heart Touching
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+दर्द हल्का है साँस भारी है<br>
+जिए जाने किस रस्म जारी है<br>
+Dard Halka Hai Sans Bhaari Hai<br>
+Jiye Jane Kis Rasm Jari Hai<br>
+<hr/><br><br>
+दर्द बनकर समा गया कोई<br>
+दिल में काँटे चुभा गया कोई<br>
+Dard Bankar Samo Gaya Koi<br>
+Dil Me Kante Chubho Gaya Ko<br>
+<hr/><br><br>
+Dil Ki Dahleez Par Rakh Kar Teri Yaadon Ke Chiraag<br>
+Humne Duniyan Ko Mohabbat Ke Ujaale Bakhshey<br>
+दिल की दहलीज पर रख कर तेरी यादों के चिराग <br>
+हमने दुनियां को मोहब्बत के उजाले बख्शे<br>
+<hr/><br><br>
+दर्द बच्चा था सो जाता था एक थपकी पे<br>
+अब ये मुझसे आहों की गजा मांगता है<br>
+Dard Bachcha Tha So Jata Tha Aik Thapki Pe<br>
+Ab Ye Mujhse Aahon Ki Geza Mangata Ha<br>
+<hr/><br><br>
+Mujhko Dhoondh Leti Hai Roz Ek Naye Bahaane Se<br>
+Teri Yaad Waqif Ho Gayi Hai Mere Har Thikaane Se<br>
+मुझको ढूंढ लेती है रोज एक नए बहाने से <br>
+तेरी याद वाकिफ हो गयी है मेरे हर ठिकाने से<br>
+<hr/><br><br>
+</div>
+
+</body>
+</html>

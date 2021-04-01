@@ -1,0 +1,109 @@
+﻿<html>
+<title>
+Contact Us
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+color:blue;
+font-family:"Georgia";
+position:relative;
+top:40%;
+left:30%;
+font-size:20px;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+<p id="p1"> You can contact us using an of the given platforms.</p>
+<br>
+<p id="p2">Mail us at:<a id="link">   dhagaavimarsh@gmail.com</a></p><br>
+<p id="p3">Facebook page:   <a>www.facebook/dhagaavimarsh</a></p><br>
+<p id="p4">Follow us on Instagram:  @DhagaaVimarsh<p>
+</div>
+</body>
+</html1>

@@ -1,0 +1,817 @@
+﻿
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title></title>
+<script src="/cdn-cgi/apps/head/2MbYhWAmsvAgZSzIFd5lcxYpKns.js"></script><link rel="amphtml" href="https://www.bharatdarshan.co.nz/author-profile-amp/6/surdas.html">
+<link href="css/style-bd.css" rel="stylesheet" type="text/css" />
+
+<link href="css/menu.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-latest.min.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+<script src="js/doubletaptogo.min.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+
+	$( function()
+	{
+		$( '#nav li:has(ul)' ).doubleTapToGo();
+	});
+
+</script>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+ $(document).ready(function() {
+         //checking the date
+              var now = new Date();
+
+          // vardt= now.format("m/dd/yy");
+
+             var currentTime = new Date();
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDay();
+        var year = currentTime.getFullYear();
+        var ldate=currentTime.getDate();
+        var dt = (month + "-" + day + "-" + year+"-"+ldate)
+        //alert(ldate);
+
+         //end checking the date
+        //options( 1 - ON , 0 - OFF)
+        var auto_slide = 1;
+            var hover_pause = 1;
+        var key_slide = 1;
+
+        //speed of auto slide(
+        var auto_slide_seconds = 1000;
+        /* IMPORTANT: i know the variable is called ...seconds but it's
+        in milliseconds ( multiplied with 1000) '*/
+
+        /*move he last list item before the first item. The purpose of this is
+        if the user clicks to slide left he will be able to see the last item.*/
+        $('#carousel_ul li:first').before($('#carousel_ul li:last'));
+
+        //check if auto sliding is enabled
+        if(auto_slide == 1){
+            /*set the interval (loop) to call function slide with option 'right'
+            and set the interval time to the variable we declared previously */
+            var timer = setInterval('slide("right")', auto_slide_seconds);
+
+            /*and change the value of our hidden field that hold info about
+            the interval, setting it to the number of milliseconds we declared previously*/
+            $('#hidden_auto_slide_seconds').val(auto_slide_seconds);
+        }
+
+        //check if hover pause is enabled
+        if(hover_pause == 1){
+            //when hovered over the list
+            $('#carousel_ul').hover(function(){
+                //stop the interval
+                clearInterval(timer)
+            },function(){
+                //and when mouseout start it again
+                timer = setInterval('slide("right")', auto_slide_seconds);
+            });
+
+        }
+
+        //check if key sliding is enabled
+        if(key_slide == 1){
+
+            //binding keypress function
+            $(document).bind('keypress', function(e) {
+                //keyCode for left arrow is 37 and for right it's 39 '
+                if(e.keyCode==37){
+                        //initialize the slide to left function
+                        slide('left');
+                }else if(e.keyCode==39){
+                        //initialize the slide to right function
+                        slide('right');
+                }
+            });
+
+        }
+
+
+    $.get("../date.php",{ cur_date: dt  },
+            function(data){
+            /*$("#fest").html(data);
+            $("#fest").show();*/
+                var res_arr=data.split("~");
+                $("#date_display").html(res_arr[0]);
+                $("#date_display").show();
+                $("#quote").html(res_arr[1]);
+                $("#quote").show();
+                
+                if(thispage=="index.php"){
+                    if(res_arr.length>=3){
+                    
+                        $("#dailysrory").html(res_arr[2]);
+                        $("#dailysrory").show();
+                    }
+                    if(res_arr.length>=4){
+                    
+                        $("#mytho").html(res_arr[3]);
+                        $("#mytho").show();                 
+                    }
+                    if(res_arr.length>=5){
+                    //alert(res_arr[4]);
+                        $("#fest").html(res_arr[4]);
+                        $("#fest").show();                  
+                    }
+                
+                
+                }
+                
+                var currentTime1 = new Date();
+                  //alert(currentTime1.getDate());
+                  var st=currentTime1.getDate();
+                  if(eval(st)<10)
+                  {
+                    st="0"+st;
+                  }
+                  $("#dtdt").html(st+"&nbsp;");
+                  $("#quote").html(res_arr[1]);
+                  /*document.getElementById("dtdt").innerHTML=st+"&nbsp;";
+                  document.getElementById("quote").innerHTML=myresparr[1];*/
+            });
+
+
+
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/slider_style.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+
+
+
+<style>
+@font-face {
+	font-family: 'Kalam';
+	src: url('fonts/Kalam-Light.eot');
+	src: url('fonts/Kalam-Light.eot?#iefix') format('embedded-opentype'),  url('fonts/Kalam-Light.woff2') format('woff2'),  url('fonts/Kalam-Light.woff') format('woff'),  url('fonts/Kalam-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Kalam';
+	src: url('fonts/Kalam-Regular.eot');
+	src: url('fonts/Kalam-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/Kalam-Regular.woff2') format('woff2'),  url('fonts/Kalam-Regular.woff') format('woff'),  url('fonts/Kalam-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Kalam';
+	src: url('fonts/Kalam-Bold.eot');
+	src: url('fonts/Kalam-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/Kalam-Bold.woff2') format('woff2'),  url('fonts/Kalam-Bold.woff') format('woff'),  url('fonts/Kalam-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+</style>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5852NZH');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5852NZH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="top_part">
+<div class="top">
+<div class="top_left">दक्षिण की हिंदी विरोधी नीति वास्तव में दक्षिण की नहीं, बल्कि कुछ अंग्रेजी भक्तों की नीति है। - के.सी. सारंगमठ</div>
+<div class="top_right">
+<div id="google_translate_element"></div>
+
+</div> 
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_wrapper">
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+function serach_chk()
+{
+    if(document.getElementById("src_field").value=="")
+    {
+        alert("please enter search keyword.");
+        document.getElementById("src_field").focus();
+        return false;
+    }
+}
+function addAttr_1(){
+	//$(".search").removeAttr("id");
+	$(".search").attr("id","src_field");
+}
+function addAttr_2(){
+	$(".search").removeAttr("id");
+	//$(".search").attr("id","good");
+}
+</script>
+<script src="https://www.google.com/jsapi" type="6251bbdb8a574ce2a4a98607-text/javascript">
+    </script>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+	//alert('test');
+	var control;
+      // Load the Google Transliteration API
+            google.load("elements", "1", {
+            packages: "transliteration"
+          });
+      function onLoad() { 
+        var opt = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.HINDI],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true,
+        };
+		
+		
+	  control =new google.elements.transliteration.TransliterationControl(opt);
+	  control.makeTransliteratable(['src_field']);
+	  control.makeTransliteratable(['transliterateTextarea']);
+	  remtrans();
+      }
+      google.setOnLoadCallback(onLoad);
+	  
+	  function addtrans() { 
+        control.enableTransliteration();
+	
+      }
+	  function remtrans() { 
+        
+		
+		
+	  control.disableTransliteration();
+	  
+		
+		
+      }
+</script>
+
+<script src="/js/jquery.marquee.min.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+$(function(){
+  $('#overlay').fadeOut(3000,function(){
+    $('.marquee_slider_out').fadeIn(1000);
+	var $mwo = $('.marquee-with-options');
+	$('.marquee').marquee();
+	$('.marquee-with-options').marquee({
+		//speed in milliseconds of the marquee
+		speed: 13000,
+		//gap in pixels between the tickers
+		gap: 0,
+		//gap in pixels between the tickers
+		delayBeforeStart: 0,
+		//'left' or 'right'
+		direction: 'left',
+		//true or false - should the marquee be duplicated to show an effect of continues flow
+		duplicated: true,
+		//on hover pause the marquee - using jQuery plugin https://github.com/tobia/Pause
+		pauseOnHover: true
+	});
+	
+	//Direction upward
+	$('.marquee-vert').marquee({
+		direction: 'up',
+		speed: 1500
+	});
+
+	//pause and resume links
+	$('.pause').click(function(e){
+		e.preventDefault();
+		$mwo.trigger('pause');
+	});
+	$('.resume').click(function(e){
+		e.preventDefault();
+		$mwo.trigger('resume');
+	});
+	//toggle
+	$('.toggle').hover(function(e){
+		$mwo.trigger('pause');
+	},function(){
+		$mwo.trigger('resume');
+	})
+	.click(function(e){
+		e.preventDefault();
+	})
+  });
+});
+</script>
+
+
+
+<div class="head_part">
+<div class="logo"><a href="https://www.bharatdarshan.co.nz/"><img src="/images/logo.png" alt="Bharat-Darshan Hindi magazine" /></a><p>भारत-दर्शन::इंटरनेट पर विश्व की सबसे पहली ऑनलाइन हिंदी साहित्यिक पत्रिका</p></div>
+<div class="head_part_right">
+<div class="head_social_icon"><p>Find Us On:</p><a href=" https://www.facebook.com/pages/Bharat-Darshan-Hindi-literary-magazine-from-New-Zealand/294650587254040"><img src="/images/fb.png" alt="" /></a></div>
+<div class="clear mobile_clear"></div>
+<form onsubmit="if (!window.__cfRLUnblockHandlers) return false; return serach_chk();" action="search_result.php" method="post" style="margin:0px;" name="form_search" data-cf-modified-6251bbdb8a574ce2a4a98607-="">
+<div class="search_part">
+<span class="radio_lang"><input type="radio" checked="checked" onclick="if (!window.__cfRLUnblockHandlers) return false; remtrans();" id="lang_eng" value="english" name="lang" data-cf-modified-6251bbdb8a574ce2a4a98607-=""> English</span>
+<span class="radio_lang"><input type="radio" onclick="if (!window.__cfRLUnblockHandlers) return false; addtrans();" value="hindi" id="lang" name="lang" data-cf-modified-6251bbdb8a574ce2a4a98607-=""> Hindi</span>
+<input type="text" value="" id="src_field" class="search" name="search_field" placeholder="Search">
+
+<button type="submit" name="search" class="search_part_btn">&nbsp;</button>
+</div>
+</form>
+</div>
+</div>
+<div class="clear "></div>
+<div class="menu_part">
+<nav id="nav"> <a href="#nav" title="Show navigation">Show navigation</a> <a href="#" title="Hide navigation">Hide navigation</a>
+<ul class="clearfix">
+<li><a href="index.html">&#2350;&#2369;&#2326;&#2381;&#2351; &#2346;&#2371;&#2359;&#2381;&#2336;</a></li><li><a href='magazine/41/hindi-poetry.html'>काव्य</a><img style='border:0;' alt='' class='downarrowclass' src='/images/down12.png'><ul><li><a href='magazine/61/hindi-poems.html'>कविताएं</a></li><li><a href='magazine/68/hindi-geet.html'>गीत</a></li><li><a href='magazine/57/hindi-ghazals.html'>ग़ज़लें</a></li><li><a href='magazine/85/hasya-ras.html'>हास्य काव्य</a></li><li><a href='magazine/73/hindi-bhajans.html'>हिंदी भजन</a></li><li><a href='magazine/79/dohe.html'>दोहे </a></li></ul></li><li><a href='magazine/64/hindi-miscellaneous.html'>विविध</a><img style='border:0;' alt='' class='downarrowclass' src='/images/down12.png'><ul><li><a href='magazine/84/readable.html'>रोचक</a></li><li><a href='magazine/69/hindi-articles.html'>आलेख</a></li><li><a href='magazine/70/vyangya.html'>व्यंग्य</a></li><li><a href='magazine/76/history-pages.html'>इतिहास के पन्नों से</a></li></ul></li><li><a href='magazine/27/story.html'>कथा-कहानी</a><img style='border:0;' alt='' class='downarrowclass' src='/images/down12.png'><ul><li><a href='magazine/58/short-stories.html'>लघु-कथाएं</a></li><li><a href='magazine/53/folk-lores.html'>लोक-कथाएं</a></li><li><a href='magazine/51/hindi-story.html'>कहानियां </a></li><li><a href='magazine/75/reminiscence.html'>संस्मरण</a></li></ul></li><li><a href='magazine/38/baal-sahitya.html'>बाल-साहित्य </a><img style='border:0;' alt='' class='downarrowclass' src='/images/down12.png'><ul><li><a href='magazine/54/panchtantra.html'>पंचतंत्र की कहानियाँ</a></li><li><a href='magazine/89/childrens-poetry.html'>बच्चों की कविताएं</a></li><li><a href='magazine/40/childrens-stories-baal-sahitya.html'>बच्चों की कहानियां</a></li></ul></li>
+</ul>
+</nav>
+<div class="current_date">
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+var month = {"Jan": '&#x091C;&#x0928;&#x0935;&#x0930;&#x0940;', "Feb": '&#x092B;&#x0930;&#x0935;&#x0930;&#x0940;', "Mar": '&#x092E;&#x093E;&#x0930;&#x094D;&#x091A;', "Apr": '&#x0905;&#x092A;&#x094D;&#x0930;&#x0948;&#x0932;', "May": '&#x092E;&#x0908;', "Jun": '&#x091C;&#x0942;&#x0928;', "Jul": '&#x091C;&#x0941;&#x0932;&#x093E;&#x0908;', "Aug": '&#x0905;&#x0917;&#x0938;&#x094D;&#x0924;', "Sep": '&#x0938;&#x093F;&#x0924;&#x092E;&#x094D;&#x092C;&#x0930;', "Oct": '&#x0905;&#x0915;&#x094D;&#x0924;&#x0942;&#x092C;&#x0930;', "Nov": '&#x0928;&#x0935;&#x092E;&#x094D;&#x092C;&#x0930;', "Dec": '&#x0926;&#x093F;&#x0938;&#x092E;&#x094D;&#x092C;&#x0930;'};
+var day = {"Sun": '&#x0930;&#x0935;&#x093F;',"Mon": '&#x0938;&#x094B;&#x092E;',"Tue": '&#x092E;&#x0945;&#x0917;&#x0932;',"Wed": '&#x092C;&#x0941;&#x0927;',"Thu": '&#x0917;&#x0941;&#x0930;&#x0942;',"Fri": '&#x0936;&#x0941;&#x0915;&#x094D;&#x0930;',"Sat": '&#x0936;&#x0928;&#x093F;'};
+
+var utp=(new Date()).toString().split(' '); 
+//var utpt=utp[1] + ' ' + utp[2] + ', ' + utp[3]; 
+var utpt=day[utp[0]] + ', ' + utp[2] + ' ' + month[utp[1]] + ' '+utp[3]; 
+
+document.write(utpt);	
+</script>
+</div>
+</div>
+<div class="clear"></div>
+<div class="current_date_mobile">
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+var month = {"Jan": '&#x091C;&#x0928;&#x0935;&#x0930;&#x0940;', "Feb": '&#x092B;&#x0930;&#x0935;&#x0930;&#x0940;', "Mar": '&#x092E;&#x093E;&#x0930;&#x094D;&#x091A;', "Apr": '&#x0905;&#x092A;&#x094D;&#x0930;&#x0948;&#x0932;', "May": '&#x092E;&#x0908;', "Jun": '&#x091C;&#x0942;&#x0928;', "Jul": '&#x091C;&#x0941;&#x0932;&#x093E;&#x0908;', "Aug": '&#x0905;&#x0917;&#x0938;&#x094D;&#x0924;', "Sep": '&#x0938;&#x093F;&#x0924;&#x092E;&#x094D;&#x092C;&#x0930;', "Oct": '&#x0905;&#x0915;&#x094D;&#x0924;&#x0942;&#x092C;&#x0930;', "Nov": '&#x0928;&#x0935;&#x092E;&#x094D;&#x092C;&#x0930;', "Dec": '&#x0926;&#x093F;&#x0938;&#x092E;&#x094D;&#x092C;&#x0930;'};
+var day = {"Sun": '&#x0930;&#x0935;&#x093F;',"Mon": '&#x0938;&#x094B;&#x092E;',"Tue": '&#x092E;&#x0945;&#x0917;&#x0932;',"Wed": '&#x092C;&#x0941;&#x0927;',"Thu": '&#x0917;&#x0941;&#x0930;&#x0942;',"Fri": '&#x0936;&#x0941;&#x0915;&#x094D;&#x0930;',"Sat": '&#x0936;&#x0928;&#x093F;'};
+
+var utp=(new Date()).toString().split(' '); 
+//var utpt=utp[1] + ' ' + utp[2] + ', ' + utp[3]; 
+var utpt=day[utp[0]] + ', ' + utp[2] + ' ' + month[utp[1]] + ' '+utp[3]; 
+
+document.write(utpt);	
+</script>
+</div>
+<div class="article_title" style="display:none;">
+<iframe src="//www.facebook.com/plugins/like.php?href=/&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21" style="border:0px; width:150px; overflow:hidden;
+                                height:21px; display:none;"></iframe>
+<div class="g-follow" data-href="https://plus.google.com/100936356493235927255" data-rel="author"></div>
+<span><a href="Whatsapp://send?text=https://www.bharatdarshan.co.nz/" title="whatsapp"><img width="18" height="18" src="/images/whatsapp.png" alt="whatsapp share" /></a></span>
+<div class="clear"></div>
+</div>
+<div class="top_google_add" style="margin:10px 2px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8177844576730194" data-ad-slot="9200121260" data-ad-format="auto"></ins>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div id="overlay"><img src="images/loading.gif" alt="Loading" /></div>
+<div class="marquee_slider_out" style="display:none;">
+<div id="s1" class='marquee-with-options is'>
+<a href="/author-profile/24/rabindranath-tagore.html"><img src="/author/24.jpg" alt="रबीन्द्रनाथ टैगोर " width="70" style="margin:3px;" title="रबीन्द्रनाथ टैगोर " /><span>रबीन्द्रनाथ टैगोर </span></a>
+<a href="/author-profile/6/surdas.html"><img src="/author/6.jpg" alt="सूरदास  " width="70" style="margin:3px;" title="सूरदास  " /><span>सूरदास </span></a>
+<a href="/author-profile/5/raskhan-hindi-poet.html"><img src="/author/5.jpg" alt="रसखान " width="70" style="margin:3px;" title="रसखान " /><span>रसखान </span></a>
+<a href="/author-profile/10/bhisham-sahni.html"><img src="/author/10.jpg" alt="भीष्म साहनी " width="70" style="margin:3px;" title="भीष्म साहनी " /><span>भीष्म साहनी </span></a>
+<a href="/author-profile/47/subhadrakumari-chauhan.html"><img src="/author/47.jpg" alt="सुभद्रा कुमारी " width="70" style="margin:3px;" title="सुभद्रा कुमारी " /><span>सुभद्रा कुमारी </span></a>
+<a href="/author-profile/8/munshi-premchand.html"><img src="/author/8.jpg" alt="मुंशी प्रेमचंद " width="70" style="margin:3px;" title="मुंशी प्रेमचंद " /><span>मुंशी प्रेमचंद </span></a>
+<a href="/author-profile/27/raidas-biography-ravidas.html"><img src="/author/27.jpg" alt="रैदास " width="70" style="margin:3px;" title="रैदास " /><span>रैदास </span></a>
+<a href="/author-profile/1/bihari-biography.html"><img src="/author/1.jpg" alt="बिहारी " width="70" style="margin:3px;" title="बिहारी " /><span>बिहारी </span></a>
+<a href="/author-profile/4/kabir.html"><img src="/author/4.jpg" alt="कबीरदास " width="70" style="margin:3px;" title="कबीरदास " /><span>कबीरदास </span></a>
+<a href="/author-profile/9/meerabai.html"><img src="/author/9.jpg" alt="मीराबाई " width="70" style="margin:3px;" title="मीराबाई " /><span>मीराबाई </span></a>
+<a href="/author-profile/2/tulsidas-2.html"><img src="/author/2.jpg" alt="तुलसीदास  " width="70" style="margin:3px;" title="तुलसीदास  " /><span>तुलसीदास </span></a>
+</div>
+</div>
+<div class="clear"></div>
+<div class="mid_part">
+<div class="mid_part_left">
+<div class="important_link">
+<h4>Important Links</h4>
+<ul id='navigate'><li><a href='/index.html'>Home</a></li><li><a class='mainMenuParentBtn'>Magazine</a><ul class='hidden'><li><a href='/magazine/51/hindi-story.html'>Hindi Stories</a></li><li><a href='/magazine/58/short-stories.html'>Hindi Short Stories</a></li><li><a href='/magazine/61/hindi-poems.html'>Hindi Poems</a></li><li><a href='/magazine/69/hindi-articles.html'>Hindi Articles</a></li><li><a href='/pages/17/hindi-bal-sahitya.html'>Childrens Literature</a></li></ul></li><li><a href='/author-collection.html'>Authors Collection</a></li><li><a class='mainMenuParentBtn'>Literature Collection</a><ul class='hidden'><li><a class='mainMenuParentBtn' href='literature-collection/2/27/story.html'>Tales-Stories</a><ul class='hidden'><li><a href='literature-collection/2/58/short-stories.html'>Short Stories</a></li><li><a href='literature-collection/2/51/hindi-story.html'>Hindi Stories</a></li></ul></li><li><a class='mainMenuParentBtn' href='literature-collection/2/41/hindi-poetry.html'>Poetry</a><ul class='hidden'><li><a href="https://www.bharatdarshan.co.nz/magazine/articles/42/rashtriya-gaan.html">National Anthem</a></li><li><a href='literature-collection/2/79/dohe.html'>Hindi Couplets</a></li><li><a href='literature-collection/2/61/hindi-poems.html'>Poems</a></li><li><a href='/magazine/68/hindi-geet.html'>Hindi Songs</a></li><li><a href='literature-collection/2/57/hindi-ghazals.html'>Ghazals</a></li><li><a href='literature-collection/2/73/hindi-bhajans.html'>Hindi Bhajans</a></li></ul></li></ul></li><li><a class='mainMenuParentBtn'>Childrens Literature</a><ul class='hidden'><li><a href='/magazine/articles/370/baal-katha-kahani-sangrah.html'>Childrens Stories</a></li><li><a href='/magazine/articles/298/kids-poems-hindi.html'>Childrens Poems</a></li><li><a href='/magazine/articles/63/panchtantra-stories-intro.html'>Panchtantra Stories</a></li></ul></li><li><a href='/submit.html'>Submit Your Work</a></li><li><a href='/blogs.html'>Blog</a></li><li><a href='/video.html'>Video Gallery</a></li><li><a href='/pages/2/about-us.html'>About Bharat-Darshan</a></li><li><a href="https://www.bharatdarshan.co.nz/magazine/literature/202/newzealand-hindi.html">About New Zealand</a></li><li><a class='mainMenuParentBtn'>रोहित कुमार 'हैप्पी' का रचनालय</a><ul class='hidden'><li><a href='/magazine/articles/215/hindi-short-stories-rohitkumar.html'>रोहित कुमार 'हैप्पी' की लघु-कथाएं</a></li><li><a href='/magazine/articles/230/hindighazal-collections-rohitkumar.html'>रोहित कुमार 'हैप्पी' की ग़जलें</a></li></ul></li></ul> </div>
+<div class="clear"></div>
+<div class="previous_link">
+</div>
+</div> <div class="mid_part_mid auther_pro" style="border:1px #666 solid;">
+<div class="mid_part_mid_top" style="width: 100%;">
+<h1 style="background:#eee;border: 1px solid #ccc;padding:0 4px;color: #000; font-size:16px; color:#360;">सूरदास | Surdas</h1>
+<div class="mid_part_mid_desc">
+<img style="padding:10px; border:0;" src="/author/6.jpg" alt />
+<p>सूरदास जी वात्सल्य रस के सम्राट माने जाते हैं। उन्होंने श्रृंगार और शान्त रसों का भी बड़ा मर्मस्पर्शी वर्णन किया है।</p>
+<p>सूरदास की जन्मतिथि एवं जन्मस्थान के विषय में विद्वानों में मतभेद है। "साहित्य लहरी' सूर की लिखी रचना मानी जाती है। इसमें साहित्य लहरी के रचना-काल के सम्बन्ध में<br />निम्न पद मिलता है -</p>
+<p>मुनि पुनि के रस लेख ।<br />दसन गौरीनन्द को लिखि सुवल संवत् पेख ।।</p>
+<p>इसका अर्थ संवत् १६०७ वि० माना जाता है, अतएवं "साहित्य लहरी' का रचना काल संवत् १६०७ वि० है। इस ग्रन्थ से यह भी प्रमाणित होता है कि सूर के गुरु श्री बल्लभाचार्य थे। इस आधार पर सूरदास का जन्म सं० १५३५ वि० के लगभग ठहरता है, क्योंकि बल्लभ सम्प्रदाय की मान्यता है कि बल्लभाचार्य सूरदास से दस दिन बड़े थे और बल्लभाचार्य का जन्म उक्त संवत् की वैशाख् कृष्ण एकादशी को हुआ था। इसलिए सूरदास की जन्म-तिथि वैशाख शुक्ला पंचमी, संवत् १५३५ वि० समीचीन मानी जाती है। उनकी मृत्यु संवत् १६२० से १६४८ वि० के मध्य मान्य है।</p>
+<p>आचार्य रामचन्द्र शुक्ल जी के मतानुसार सूरदास का जन्म संवत् १५४० वि० के सन्निकट और मृत्यु संवत् १६२० वि० के आसपास मानी जाती है।</p>
+<p><br /><strong>जन्म स्थल</strong></p>
+<p>'चौरासी वैष्णव की वार्ता' के आधार पर उनका जन्म रुनकता अथवा रेणु का क्षेत्र (वर्तमान जिला आगरान्तर्गत) में हुआ था। मथुरा और आगरा के बीच गऊघाट पर ये निवास करते थे। बल्लभाचार्य से इनकी भेंट वहीं पर हुई थी। "भावप्रकाश' में सूर का जन्म स्थान सीही नामक ग्राम बताया गया है। वे सारस्वत ब्राह्मण थे और जन्म के अंधे थे।</p>
+<p>"आइने अकबरी' में (संवत् १६५३ वि०) तथा "मुतखबुत-तवारीख' के अनुसार सूरदास को अकबर के दरबारी संगीतज्ञों में माना है।</p>
+<p><br />अधिकतर विद्वानों का मत है कि सूर का जन्म सीही नामक ग्राम में एक निर्धन सारस्वत ब्राह्मण परिवार में हुआ था। बाद में ये आगरा और मथुरा के बीच गऊघाट पर आकर रहने लगे थे।</p>
+<p>खंजन नैन रुप मदमाते ।<br />अतिशय चारु चपल अनियारे,<br />पल पिंजरा न समाते ।।<br />चलि - चलि जात निकट स्रवनन के,<br />उलट-पुलट ताटंक फँदाते ।<br />"सूरदास' अंजन गुन अटके,<br />नतरु अबहिं उड़ जाते ।।</p>
+<p><br /><strong>क्या सूरदास अंधे थे ?</strong></p>
+<p>सूरदास श्रीनाथ भ की "संस्कृतवार्ता मणिपाला', श्री हरिराय कृत "भाव-प्रकाश", श्री गोकुलनाथ की "निजवार्ता' आदि ग्रन्थों के आधार पर, जन्म के अन्धे माने गए हैं। लेकिन राधा-कृष्ण के रुप सौन्दर्य का सजीव चित्रण, नाना रंगों का वर्णन, सूक्ष्म पर्यवेक्षणशीलता आदि गुणों के कारण अधिकतर वर्तमान विद्वान सूर को जन्मान्ध स्वीकार नहीं करते।"</p>
+<p>श्यामसुन्दरदास ने इस सम्बन्ध में लिखा है - "सूर वास्तव में जन्मान्ध नहीं थे, क्योंकि श्रृंगार तथा रंग-रुपादि का जो वर्णन उन्होंने किया है वैसा कोई जन्मान्ध नहीं कर सकता।'' डॉक्टर हजारीप्रसाद द्विवेदी ने लिखा है - "सूरसागर के कुछ पदों से यह ध्वनि अवश्य निकलती है कि सूरदास अपने को जन्म का अन्धा और कर्म का अभागा कहते हैं, पर सब समय इसके अक्षरार्थ को ही प्रधान नहीं मानना चाहिए।"</p>
+<p><br /><strong>रचनाएं</strong></p>
+<p>सूरदास की रचनाओं में निम्नलिखित पाँच ग्रन्थ बताए जाते हैं -</p>
+<p><br />१ सूरसागर<br />२ सूरसारावली<br />३ साहित्य-लहरी<br />४ नल-दमयन्ती<br />५ ब्याहलो</p>
+<p>उपरोक्त में अन्तिम दो ग्रंथ अप्राप्य हैं।</p>
+<p>नागरी प्रचारिणी सभा द्वारा प्रकाशित हस्तलिखित पुस्तकों की विवरण तालिका में सूरदास के १६ ग्रन्थों का उल्लेख है। इनमें सूरसागर, सूरसारावली, साहित्य लहरी, नल-दमयन्ती, ब्याहलो के अतिरिक्त दशमस्कंध टीका, नागलीला, भागवत्, गोवर्धन लीला, सूरपचीसी, सूरसागर सार, प्राणप्यारी, आदि ग्रन्थ सम्मिलित हैं। इनमें प्रारम्भ के तीन ग्रंथ ही महत्त्वपूर्ण समझे जाते हैं।</p>
+</div>
+</div>
+<div class="clear"></div>
+<div class="article" style="width: 100%; margin:5px;">
+<h4 style="background:none; border:none; color:#F60; padding:0px; margin-bottom:2px;">Author's Collection</h4>
+<span class="no_record">Total Number Of Record :3</span>
+<div class="article_1" style="margin:2px;">
+<h5 style="color:#360; font-size:14px;"><a style="color:#360; font-size:14px;text-decoration: none;" href="/magazine/literature/2/sur-ke-pad.html">सूर के पद | Sur Ke Pad</a></h5>
+<p>सूरदास के पदों का संकलन - इस पृष्ठ के अंतर्गत सूर के पदों का संकलन यहाँ उपलब्ध करवाया जा रहा है। यदि आपके पास सूरदास से संबंधित सामग्री हैं तो कृपया 'भारत-दर्शन' के साथ साझा करें।</p>
+<p>&nbsp;</p>
+<p>मुख दधि लेप किए<br />सोभित कर नवनीत लिए।<br />घुटुरुनि चलत रेनु तन मंडित मुख दधि लेप किए॥</p>
+<p>... <div class="article_read"><a style="color:#000; margin-right:10px;" href="/magazine/literature/2/sur-ke-pad.html">More...</a></div>
+</div>
+<div class="clear"></div>
+<div class="article_1" style="margin:2px;">
+<h5 style="color:#360; font-size:14px;"><a style="color:#360; font-size:14px;text-decoration: none;" href="/magazine/literature/46/man-na-bhi-dus-bees-sur.html">मन न भए दस-बीस - सूरदास के पद</a></h5>
+<p><span style="font-size: small;">मन न भए दस-बीस</span></p>
+<p><span style="font-size: small;">ऊधौ मन न भए दस-बीस।<br />एक हुतो सो गयो स्याम संग को अवराधै ईस॥</span></p>
+<p><span style="font-size: small;">इंद्री सिथिल भई केसव बिनु ज्यों देही बिनु सीस।<br />आसा लागि रहत तन स्वासा जीवहिं कोटि बरीस॥</span></p>
+<p>... <div class="article_read"><a style="color:#000; margin-right:10px;" href="/magazine/literature/46/man-na-bhi-dus-bees-sur.html">More...</a></div>
+</div>
+<div class="clear"></div>
+<div class="article_1" style="margin:2px;">
+<h5 style="color:#360; font-size:14px;"><a style="color:#360; font-size:14px;text-decoration: none;" href="/magazine/literature/271/holi-pad-sur.html">हरि संग खेलति हैं सब फाग - सूरदास के पद</a></h5>
+<p>हरि संग खेलति हैं सब फाग।<br>इहिं मिस करति प्रगट गोपी: उर अंतर को अनुराग।।<br>सारी पहिरी सुरंग, कसि कंचुकी, काजर दे दे नैन।<br>बनि बनि निकसी निकसी भई ठाढी, सुनि माधो के बैन।।<br>डफ, बांसुरी, रुंज अरु महुआरि, बाजत ताल मृदंग।<br>... <div class="article_read"><a style="color:#000; margin-right:10px;" href="/magazine/literature/271/holi-pad-sur.html">More...</a></div>
+</div>
+<div class="clear"></div>
+<span class="no_record">Total Number Of Record :3</span>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8177844576730194" data-ad-slot="9812238860" data-ad-format="autorelaxed"></ins>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</div>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+
+function check_formsub()
+
+   {
+
+      if(document.getElementById("name").value=="")
+
+  {
+
+    alert("Enter your name.");
+
+    document.getElementById("name").focus();
+
+    return false;
+
+  }
+
+   else if(document.getElementById("email").value=="")
+
+  {
+
+    alert("Enter e-mail address.");
+
+    document.getElementById("email").focus();
+
+    return false;
+
+  }
+
+  else if (echeck(document.getElementById("email").value)=='')
+
+  {
+
+    document.getElementById("email").value="";
+
+    document.getElementById("email").focus();
+
+    return false;
+
+  } else if(document.getElementById("security").value=="")
+
+  {
+
+    alert("Enter security code.");
+
+    document.getElementById("security").focus();
+
+    return false;
+
+  }
+
+   }
+
+   function echeck(str)
+
+{
+
+    var at="@"
+
+    var dot="."
+
+    var lat=str.indexOf(at)
+
+    var lstr=str.length
+
+    var ldot=str.indexOf(dot)
+
+    if (str.indexOf(at)==-1){
+
+      alert("Invalid E-mail ID")
+
+       return false
+
+    }
+
+   if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+
+      alert("Invalid E-mail ID")
+
+     return false
+
+   }
+
+  if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+
+     alert("Invalid E-mail ID")
+
+     return false
+
+  }
+
+  if (str.indexOf(at,(lat+1))!=-1){
+
+     alert("Invalid E-mail ID")
+
+     return false
+
+  }
+
+
+
+  if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+
+    alert("Invalid E-mail ID")
+
+     return false
+
+   }
+
+  if (str.indexOf(dot,(lat+2))==-1){
+
+   alert("Invalid E-mail ID")
+
+   return false
+
+  }
+
+  if (str.indexOf(" ")!=-1){
+
+    alert("Invalid E-mail ID")
+
+     return false
+
+  }
+
+
+
+  return true
+
+ }
+
+</script>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+
+function get_radio_value()
+
+{ var rad_val=0;
+
+var ans_val=0;
+
+var q_val=0;
+
+var cntry=0;
+
+var selected=false;
+
+for (var i=0; i < document.frmpole.vote.length; i++)
+
+   {
+
+   if (document.frmpole.vote[i].checked)
+
+      {
+
+      rad_val = document.frmpole.vote[i].value;
+
+      selected=true;
+
+     //alert(rad_val);
+
+     ans_val=document.frmpole.a_id[i].value;
+
+      }
+
+   }
+
+if(!selected)
+
+{
+
+alert("Please select an answer");
+
+}
+
+else if(document.getElementById("country").value==""){
+
+    alert("select your country.");
+
+    document.getElementById("country").focus();
+
+    return false;
+
+}else{
+
+cntry=document.getElementById("country").value
+
+q_val=document.getElementById("q_id").value;
+
+        xmlHttp=GetXmlHttpObject3();
+
+        if (xmlHttp==null){
+
+          alert ("Your browser does not support AJAX!");
+
+        }
+
+        var url="../poll_vote.php?vote="+rad_val+"&q_id="+q_val+"&a_id="+ans_val+"&cntry="+cntry;
+
+        url=url+"&sid="+Math.random();
+
+        xmlHttp.onreadystatechange=stateChanged;
+
+        xmlHttp.open("GET",url,true);
+
+        xmlHttp.send(null);
+
+        //return false;
+
+        }
+
+}
+
+function stateChanged()
+
+{
+
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="completed")
+
+{
+
+  //alert(xmlHttp.responseText);
+
+  document.getElementById("poll").style.display="block";
+
+  document.getElementById("poll").innerHTML=xmlHttp.responseText;
+
+}
+
+}
+
+function GetXmlHttpObject3()
+
+{
+
+var xmlHttp=null;
+
+try
+
+  {
+
+  // Firefox, Opera 8.0+, Safari
+
+  xmlHttp=new XMLHttpRequest();
+
+  }
+
+catch (e)
+
+  {
+
+  // Internet Explorer
+
+  try
+
+    {
+
+    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+
+    }
+
+  catch (e)
+
+    {
+
+    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+    }
+
+  }
+
+return xmlHttp;
+
+}
+
+</script>
+<div class="mid_part_right">
+<div class="social_icon">
+</div>
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="subscription">
+<h4>सब्स्क्रिप्शन</h4>
+<form action="thank1.php?action=add" name="frm" method="post" onsubmit="if (!window.__cfRLUnblockHandlers) return false; return check_formsub();" data-cf-modified-6251bbdb8a574ce2a4a98607-="">
+<input type="text" name="name" placeholder="Your First Name" id="name" class="header-sub" />
+<input type="text" name="email" placeholder="Your Email Address" id="email" class="header-sub" />
+<div class="capture"><img src="/CaptchaSecurityImages.php" alt=""></div>
+<input type="hidden" value="add" name="action">
+<input type="text" name="security_code" />
+<input type="submit" value="Subscribe" />
+</form>
+</div>
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="subscription">
+<h4>इस अंक में</h4>
+<p>&nbsp;</p>
+<p>इस अंक की<a href="/issue_all.php"> समग्र सामग्री</a> पढ़ें </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<div class="clear"></div>
+<div class="right_google_add">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8177844576730194" data-ad-slot="1537253669" data-ad-format="auto"></ins>
+<script type="6251bbdb8a574ce2a4a98607-text/javascript">
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>
+</div>
+<div class="clear"></div>
+<div class="subscription">
+<h4>पिछले अंक</h4>
+<ul>
+<li><a href="/issue/84/hindi-stories-poems-jan-feb-2019.html" target="_blank">जनवरी-फरवरी 2019</a></li>
+<li><a href="/issue/83/diwali-issue.htmlhindi-stories-poems-diwali-nov-dec-2018.html" target="_blank">दीवाली विशेषांक 2018 </a></li>
+<li><a href="/issue/82/hindi-stories-poems-sept-oct-2018.html" target="_blank">सितम्बर-अक्टूबर 2018</a></li>
+<li><a href="/issue/81/hindi-stories-poems-july-aug-2018.html" target="_blank">जुलाई-अगस्त 2018 </a></li>
+<li><a href="/issue/80/may-june-2018.html" target="_blank">मई-जून 2018 </a></li>
+</ul>
+<a href="/all_archives.php" class="right_more">और...</a>
+</div>
+<div class="clear"></div>
+<div class="subscription">
+<form method="post" action="contactus.html">
+<input type="hidden" name="mode" id="mode" value="add" style="width:90%;" />
+<h4>सम्पर्क करें</h4>
+<h5>आपका नाम</h5>
+<input type="text" name="user_name" required />
+
+<h5>ई-मेल</h5>
+<input type="text" name="user_email" required />
+<h5>संदेश</h5>
+<textarea name="transliterateTextarea" id="transliterateTextarea" required></textarea>
+<div class="capture"><img src="/CaptchaSecurityImages.php" alt=""></div>
+<input type="text" name="security_code" />
+<input name="submit" type="submit" style="margin:5px 12px;" title="Send to Bharat-Darshan" value="संदेश भेजें" />
+</form>
+</div>
+</div>
+</div>
+
+<div class="clear"></div>
+<div class="footer_part">
+<div class="footer">
+<div class="footer_menu">
+<ul><li><a href='/index.html'>Home</a> | </li><li><a href='/author-collection.html'>Hindi Authors</a> | </li><li><a href='/magazine/articles/530/top-classic-hindi-stories.html'>Best Hindi Stories</a> | </li><li><a href='/magazine/articles/142/hindi-literary-news.html'>Hindi Literary News</a> | </li><li><a href='https://www.bharatdarshan.co.nz/literature-collection/2/61/hindi-poems.html'>Hindi Poems</a> | </li><li><a href='/magazine/articles/370/baal-katha-kahani-sangrah.html'>Stories for Kids</a> | </li><li><a href='/pages/18/inspirational-hindi-story-collection.html'>Hindi Story Collection</a> | </li><li><a href='/pages/2/about-us.html'>Hindi Media in New Zealand</a> | </li><li><a href='/magazine/articles/229/new-zealand-news-hindi.html'>New Zealand Hindi News</a> | </li><li><a href='/magazine/articles/1176/suniye-to.html'>The Stats Speak</a></li></ul> </div>
+<div class="footer_mid">
+<p><span>Bharat-Darshan, Hindi Magazine [ ISSN 2423-0758 ]<br />
+2/156, Universal Drive, Henderson, Waitakere -0610, Auckland (New Zealand)</span><br />
+Ph:0064-9-837 7052 Fax : 0064-9-837 3285 Mobile :0064 -21-171 3934<br />
+E-mail : <a href="mailto:info@bharatdarshan.co.nz">info@bharatdarshan.co.nz</a></p>
+</div>
+<div class="footer_bottom">
+<p>&copy; Bharat Darshan, 2018-20 | <a href="/index.html" title="Privacy">Privacy Policy </a></p>
+</div>
+</div>
+
+</div>
+<script src="/js/my-custom-hindi.js" type="6251bbdb8a574ce2a4a98607-text/javascript"></script>
+
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="6251bbdb8a574ce2a4a98607-|49" defer=""></script></body>
+</html>

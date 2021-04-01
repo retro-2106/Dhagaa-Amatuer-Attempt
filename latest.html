@@ -1,0 +1,131 @@
+﻿<html>
+<title>
+Latest
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+एक ख़ुशी 🤗 की चाह में<br>
+हर ख़ुशी से दूर 😞 हुए हम;<br>
+किसी से कुछ कह 🗣️ भी ना<br>
+सके इतने मज़बूर 😔 हुए हम;<br>
+ना आई उन्हें निभानी वफ़ा<br>
+इस 💏 दौर-ए-इश्क़ में;<br>
+और ज़माने की 👀 नज़र में बेवफ़ा<br>
+के नाम से मशहूर 😒 हुए हम।<br><br><br>
+
+उनकी मोहब्बत 💔 के अभी निशान बाकी है;<br>
+नाम लब 👄 पर है और जान बाकी🚶है;<br>
+क्या हुआ अगर देख कर मुँह 😒 फेर लेते हैं;<br>
+तसल्ली है कि शक्ल 😏 की पहचान बाकी है।<br><br><br>
+
+वो निकल गए मेरे रास्ते 😔 से इस कदर कि;<br>
+जैसे कि वो मुझे 👰 पहचानते ही नहीं;<br>
+कितने ज़ख्म खाए हैं मेरे इस दिल 💔 ने;<br>
+फिर भी हम उस बेवफ़ा को बेवफ़ा 💏 मानते ही नहीं।<br><br><br>
+
+कभी करीब 💏 तो कभी जुदा था तू;<br>
+जाने किस-किस से ख़फ़ा 😔 है तू;<br>
+मुझे तो तुझ पर खुद🚶से ज्यादा यकीन था;<br>
+पर ज़माना सच ही 😒 कहता था कि बेवफ़ा है तू।<br><br><br>
+
+महफ़िल में कुछ तो सुनाना 🗣️ पड़ता है;<br>
+ग़म छुपा कर मुस्कुराना 😒 पड़ता है;<br>
+कभी हम भी उनके 👰 अज़ीज़ थे;<br>
+आज-कल ये भी उन्हें याद 😔 दिलाना पड़ता है।<br><br><br>
+
+</div>
+
+</body>
+</html>

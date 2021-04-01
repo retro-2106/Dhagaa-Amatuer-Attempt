@@ -1,0 +1,130 @@
+﻿<html>
+<title>
+Life
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+Sabhi Raho Sabhi Manjilo Main Fasle The<br>
+Magar Kuch Raste Se Hud Se Zayda Gujar Jana Banta Hai <br>
+सभी रहो सभी मंजिलों में फैले थे <br>
+मगर कुछ रास्ते से हुड से जायदा गुजर जाना बनता है<br>
+<hr/><br><br>
+Ab To Khud Se Bhi Milne Ko Ji Nahi Karta <br>
+Bohut Bure Hai Hum Ab Logo Ye Yahi Suna Hai <br>
+अब तो खुद से भी मिलने को जी नहीं करता <br>
+बहुत बुरे हैं हम अब लोगो ये यही सुना है<br>
+<hr/><br><br>
+वो साथ थी तो मानो जन्नत थी जिंदगी<br>
+अब तो हर सांस जिंदा रहने की वजह पूछती है.<br>
+<hr/><br><br>
+Dil Ki Basti Ko Viraan Kar Ke Chala Gaya <br>
+Jo Kehta Tha Bade Pyare Ho Tum <br>
+दिल की बस्ती को वीरान कर के चला गया <br>
+जो कहता था बडे प्यारे हो तुम<br>
+<hr/><br><br>
+Meri Zindagi Main Koi Khaas Nahi Aata <br>
+Wo Kya Hai Ke Main Kisi Aur Ko Raas Nahi Aata<br>
+मेरी जिंदगी में कोई खास नहीं आता <br>
+वो क्या है के मैं किसी और को रास नहीं आता<br>
+<hr/><br><br>
+Thudi Si Jagah Mangi Thi Dil Main Iske Musafiron Ki Tarah<br>
+Isne To Tanhai Main Pura Saher Mere Naam Kr Diya <br>
+थोडी सी जगह माँगी थी दिल मैं इसके मुसाफिरों की तरह<br>
+इसने तो तन्हाई मैं पूरा शहर मेरे नाम कर दिया<br>
+<hr/><br><br>
+</div>
+
+</body>
+</html>

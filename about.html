@@ -1,0 +1,163 @@
+<html>
+<title>About Us</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body{
+color:blue;
+background-color:lavender;
+}
+#abhi{
+width:500px;}
+#ash{
+width:500px;}
+#ati{
+width:500px;}
+#hemu{
+width:500px;}
+#tavi{
+width:500px;}
+#Abtpara{
+text-align:center;
+font-family:"Arial";
+font-size:20px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+
+#content
+{
+position:absolute;
+left:10%;
+top:20%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:3%;left:8%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<br><br>
+<p id="Abtpara">
+ We are just a group of literary interested students currently pursuing our degree<br>
+ in Computer Science from Chandigarh University.<br>
+Our aim is to provide people a platform to share their views with the world.
+</p>
+<div id="content">
+<div id="abhi">
+	<img src="abhi.jpg" height=100 width=100>
+<fieldset>
+    <legend>Personalia:</legend>
+    Name:Abhilash Thakur<br>
+    Age: 20<br>
+    Profession: Student<br>
+    Himachal Pradesh
+  </fieldset>
+</div>
+<div id="ash">
+	<img src="ash.jpg" height=100 width=100>
+<fieldset>
+    <legend>Personalia:</legend>
+    Name:Ashish<br>
+    Age: 20<br>
+    Profession: Student<br>
+    Karnal,Haryana
+  </fieldset>
+</div>
+<div id="ati">
+	<img src="ati.jpg" height=100 width=100>
+<fieldset>
+    <legend>Personalia:</legend>
+    Name:Atishay Jain<br>
+    Age: 20<br>
+    Profession: Student<br>
+    Sharanpur,Uttar Pradesh
+  </fieldset>
+</div>
+<div id="hemu">
+	<img src="hemu.jpg" height=100 width=100>
+<fieldset>
+    <legend>Personalia:</legend>
+    Name:Hemant<br>
+    Age: 21<br>
+    Profession: Student<br>
+    Ahemdabad,Gujarat  </fieldset>
+</div>
+<div id="tavi">
+	<img src="tav.jpg" height=100 width=100>
+<fieldset>
+    <legend>Personalia:</legend>
+    Name:Tavish<br>
+    Age: 20<br>
+    Profession: Student<br>
+    Chamba, Himachal Pradesh
+  </fieldset>
+</div>
+</div>
+</html>

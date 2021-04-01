@@ -1,0 +1,126 @@
+﻿<html>
+<title>
+Romantic
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+Tumhaari Baat Lambi Hai Daleelen Hai Bahane Hain<br>
+Hamari Baat Itni Hai Hamari Zindagi Ho Tum<br>
+तुम्हारी बात लम्बी है दलीलें है बहाने हैं<br>
+हमारी बात इतनी है हमारी जिंदगी हो तुम <br>
+<hr/><br><br>
+तुम्हारी गिरफ्त मेरा हौसला बढती है<br>
+मुझे तुम अपनी मोहब्बत में मुब्तला रखना रोमांटिक शायरी<br>
+Tumhari Giraft Mera Hausala Badhati Hai<br>
+Mujhe Tum Apni Mohabbat Me Mubtala Rakhna<br>
+<hr/><br><br>
+तुम्हारी नींद में थोरा खलल तो परना था<br>
+हमारे ख्वाब किसी और को भी आ रहे थे<br>
+Tumhaari Need Me Thoda Khalal To Padna Tha<br>
+Hamaare Khwaab Kisi Aur Ko Bhi Aa Rahe The<br>
+<hr/><br><br>
+कुछ बात है तुम्हारी बातों में जो बात यहाँ तक आ पहुंची<br>
+हम दिल से गए दिल तुम पे गया और बात कहाँ तक जा पहुंची<br>
+Kuch Baat Hai Tumhaari Baaton Men Jo Baat Yahan Tak Aa Pahuchi<br>
+Ham Dil Se Gaye Dil Tum Pe Gaya Aur Baat Kahan Tak Ja Pahuchi<br>
+<hr/><br><br>
+तुम्हारी आँख के आँसू हमारी आँख से निकले<br>
+तुम्हे फिर भी शिकायत है मोहब्बत हम नहीं करते<br>
+Tumhari Aankh Ke Aansoo Hamari Aankh Se Nikle<br>
+Tumhe Fir Bhi Shikayat Hai Mohabbat Ham Nahi Karte<br>
+</div>
+
+</body>
+</html>

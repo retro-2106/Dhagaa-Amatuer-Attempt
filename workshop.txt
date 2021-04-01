@@ -1,0 +1,63 @@
+tak zang
+bombitup
+fun call
+
+wps wpa
+
+assign path:A to pen drive
+syskey
+update
+store startup key
+
+in order to remove
+chane setting to store it locally
+
+gpedit.msc
+cd
+rd - to delete
+
+getmac - check mac address
+ipconfig-- to check ip address
+net share-- to show shared data
+net user - to check users in computer
+net user _user_name_
+
+systeminfo
+
+list volume
+select volume _volume_no
+remove letter D
+assign letter D
+
+create partition primary 
+
+window firewall
+file printing and sharing -to allow to pc to communicate
+hacker computer school
+iploggers
+z shadow
+wolfram
+
+how to hack system using ip address ?
+->Check the information about the ip address such as the open ports etc.
+
+SSL scripting
+port 80
+port 8080
+port of ssl
+
+SSH
+Active footprinting
+Passive footprinting
+
+System hacker
+
+Payload
+
+ hackthebox.eu
+
+taskbar 
+menu bar
+sound
+effect
+

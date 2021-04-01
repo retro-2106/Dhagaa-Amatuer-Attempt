@@ -1,0 +1,126 @@
+﻿<html>
+<title>
+Romantic
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+#content{
+position:absolute;
+top:40%;
+left:15%;
+}
+</style>
+</head>
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="index.html">Welcome</a></li>
+		<li><a href="latest.html">Latest</a></li>
+		<li><a href="trending.html">Trending</a></li>
+		<li><a href="gazals.html">Gazals</a></li>
+		<li><a href="poem.html">Poems</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div id="content">
+आँसू भने से कोई अपना नही होता<br>
+जो दिल से प्यार करते है वो रोने नही देते<br>
+<hr/><br><br>
+यूँ  तो मेरे शहर में परेशानी कुछ  ख़ास नही<br>
+लोग ख़ामोश हैं पर सुकून किसी के पास नही<br>
+<hr/><br><br>
+आज लफ्ज़ो को मैंने शाम को पीने पे बुलाया है,<br>
+बन गयी बात अगर तो ग़ज़ल भी हो सकती है।<br>
+<hr/><br><br>
+जब अँग्रेज़ी मुझे झटक कर चली जाती है<br>
+हिन्दी उठाके ऊपर अपने गले से लगाती है<br>
+<hr/><br><br>
+हमारी ज़िदगी को अधुरा कर दिया..<br>
+ऐ मोहब्बत तूने अपना काम पूरा कर दिया<br>
+<hr/><br><br>
+लफ्ज़ ख़त्म हो गए अब इस रात के<br>
+चलो सुबह होने का इंतज़ार करते हैं<br>
+<hr/><br><br>
+आदत नही है मुझे कुछ भी छीन लेने की<br>
+जो मिला नही प्यार से, पाने की कोशिश ही छोड़ दी।<br>
+<hr/><br><br>
+पूछ रहे हैं वो मेरा हाल, जी भर रुलाने के बाद!<br>
+के बहारें आयीं भी तो कब? दरख़्त जल जाने के बाद!<br>
+<hr/><br><br>
+</div>
+
+</body>
+</html>

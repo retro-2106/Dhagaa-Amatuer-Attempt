@@ -1,0 +1,349 @@
+﻿<html>
+<title>
+Home Page
+</title>
+<head>
+<link rel="shortcut icon" href="d.png" />
+<style>
+body
+{
+background-color:aliceblue;
+color:slateblue;
+margin:0;
+padding:0;
+
+overflow-x: hidden;
+}
+#main{
+position:absolute;
+top:5%;
+left:15%;
+color:white;
+background-color:steelblue;
+width:75%;
+text-align:center;
+border-radius:5px;
+}
+#content{
+position:absolute;
+top:110%;
+left:10%;
+}
+*{
+margin:0px;
+padding:0px;
+font-family: Sans-Serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background:steelblue;
+left:-200px;
+transition: all 500ms linear;
+}
+#sidebar.active
+{
+left:0px;
+}
+#sidebar ul li{
+color:lavender;
+list-style:none;
+padding: 15px 10px;
+border-bottom: 1px solid slateblue;
+
+}
+#sidebar .toggle{
+position: absolute;
+left: 230px;
+top: 20px;
+}
+
+#sidebar .toggle span{
+display: block;
+width: 30px;
+height: 5px;
+background:blue;
+margin: 5px 0px;
+}
+ul li a{
+text-decoration: none;
+color:white;
+}
+
+
+
+#slider, .wrap, .slide-content{
+margin:0;
+padding:0;
+width:85%;
+height: 70vh;
+overflow-x: hidden;
+}
+.wrap{position:relative;
+top:20%;
+left:15%;
+}
+
+.slide{
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+}
+.slide1{background-image: url("s1.jpg")}
+.slide2{background-image: url("s2.jpg")}
+.slide3{background-image: url("s3.jpg")}
+.slide4{background-image: url("s4.png")}
+.slide5{background-image: url("s5.jpg")}
+.slide6{background-image: url("s6.jpg")}
+.slide7{background-image: url("s7.jpg")}
+.slide8{background-image: url("s8.jpg")}
+
+.slide-content
+{
+display: flex;
+flex-direct: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.slide-content span
+{
+font-size:5rem;
+color:#fff;
+}
+.arrow{
+cursor:pointer;
+position:absolute;
+top:50%;
+margin-top:-40px;
+width:0;
+height:0;
+border-style: solid;
+}
+#arrow-left{
+border-width: 30px 40px 30px 0;
+border-color: transparent steelblue transparent transparent;
+left:-30;
+margin-left:30px;}
+#arrow-right{
+border-width: 30px 0 30px 40px;
+border-color: transparent transparent transparent steelblue;
+left:900;
+margin-right:50px;}
+</style>
+
+
+</head>
+
+
+<body>
+<img style="position:absolute;top:10%;left:10%;" src="logo.png" >
+<script>
+function togglef()
+{
+document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+<div id="sidebar">
+<div class="toggle" onclick="togglef()">
+<span></span>
+<span></span>
+<span></span></div>
+	<ul>
+		<li><a href="welcome.html">Welcome</a></li>
+		<li>Latest</li>
+		<li>Trending</li>
+		<li><a>Gazals</a></li>
+		<li><a>Poems</a></li>
+		<li><a>Shayari</a></li>
+		<li><a>Saved</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+		<li><a>Subscription</a></li>
+		<li>Sign Out</li>
+	</ul>
+</div>
+<div class="slide">
+</div>
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<div class="wrap">
+<div id="arrow-left" class="arrow"></div>
+<div id="slider">
+<div class="slide slide1">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide2">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide3">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide4">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide5">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide6">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide7">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+<div class="slide slide8">
+<div class="slide-content">
+<span>.</span>
+</div>
+</div>
+</div>
+<div id="arrow-right" class="arrow"></div>
+<script>
+let sliderImages= document.querySelectorAll(".slide"),
+arrowLeft = document.querySelector("#arrow-left"),
+arrowRight = document.querySelector("#arrow-right"),
+current = 0;
+
+function reset(){
+for(let i=0; i<sliderImages.length; i++)
+{sliderImages[i].style.display="none";
+}
+}
+
+function startslide()
+{
+reset();
+sliderImages[0].style.display="block";
+}
+
+function slideLeft()
+{
+reset();
+sliderImages[current - 1].style.display="block";
+current--;
+}
+function slideRight()
+{
+reset();
+sliderImages[current + 1].style.display="block";
+current++;
+}
+arrowLeft.addEventListener("click", function()
+{
+if(current === 0){
+current = sliderImages.length;
+}
+slideLeft();
+});
+arrowRight.addEventListener("click", function()
+{
+if(current === sliderImages.length-1){
+current = -1;
+}
+slideRight();
+});
+startslide();
+
+</script>
+</body>
+</html>
+<div id="content">
+Paas Naa Aaaoge Kabhi                               <br>
+दूर बैठे रहोगे, पास न आओगे कभी !                    <br>
+ऐसे रूठोगे तो जान ले जाओगे कभी !                   <br>
+शोले बन जायेगें सभी फूल मेरे आंचल के !              <br>
+तुम जो मोहब्बत की घटा बनके न छाओगे कभी !!<br><br><br>
+<hr/><br>
+
+Mujhe Achcha Nahi Lagta<br>
+मुझे तेरे काफ़िले मेँ चलने का कोई शौक नहीँ !<br>
+मगर तेरे साथ कोई और चले मुझे अच्छा नहीँ लगता !!<br><br><br>
+<hr/><br>
+
+Naa Jane Konsi Mulakat Aakhri Hogi<br>
+ज़िन्दगी में ना ज़ाने कौनसी बात "आख़री" होगी !<br>
+ना ज़ाने कौनसी रात🌌 "आख़री" होगी !<br>
+मिलते, जुलते, बातें करते रहो यार एक दूसरे से !<br>
+ना जाने कौनसी "मुलाक़ात" आख़री होगी !!<br><br><br><hr/><br>
+
+Hum To Bas Itna Jante Hai<br>
+कौन किस से चाहकर दूर होता है !<br>
+हर कोई अपने हालातों से मजबूर होता है !<br>
+हम तो बस इतना जानते हैं !<br>
+हर रिश्ता "मोती" औरहर दोस्त "कोहिनूर" होता है !<br><br><br><hr/><br>
+
+Pani Se Tasweer Kha Banti Hai<br>
+पानी से तस्वीर कहाँ बनती है !<br>
+ख्वाबों से तकदीरकहाँ बनती है !<br>
+किसी भी रिश्ते को सच्चे दिल से निभाओ !<br>
+ये जिंदगी फिर वापस कहाँ मिलती है !!<br><br><br><hr/><br>
+</div>
+</body>
+</html>
+
+
+
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="d.png" />
+</head>
+<title>
+DHAAGA :VIMARSH KA MANCH :)
+</title>
+<link rel="stylesheet" type="text/css" href="att.css">
+<body>
+<img style="position:absolute;top:5%;left:5%;" src="logo.png" >
+<h1 id="main" >धागा: विमर्श का मंच.....!!!</h1>
+<br><br><br>
+<p id="para">A place to share and explore new literary ideas.........!!!!!</p>
+
+	<ul>
+		<li><a href="home.html">Home</a></li>
+		<li><a>About</a>
+			<ul>
+				<li><a href="about.html">Detail</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</li>
+		<li><a>Genre</a>
+			<ul>
+				<li><a href="beautiful.html">Beautiful</a></li>
+				<li><a href="heart.html">Heart Touching</a></li>
+				<li><a href="romantic.html">Romantic</a></li>
+				<li><a href="life.html">Life</a></li>
+			</ul>
+		</li>
+		<li><a>My Account</a>
+			<ul>
+				<li><a href="user.html">Login/Sign up</a></li>
+			</ul>
+		</li>
+		<li><a href="video.html">Video</a> </li>
+	</ul>
+<br><br><br><br><br><br>
+<p id=quote style="position:absolute;top:50%;left:40%;"  >Quote for the day .</p>
+<p id=h2 align=center>ठोकर खा कर भी न समझे तोह <br> मुसाफिर का नसीब<br>
+पत्थर ने अपना काम बखूबी निभाया था | 
+</h2>
+<p style="position:absolute;top:90%;left:80%">
+    <a href="http//www.google.com">Terms and Conditions</a> 
+	|
+    <a href="Contact Us">Privacy Policy</a>
+</p>
+</body>
+</html>
